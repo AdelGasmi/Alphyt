@@ -36,10 +36,20 @@ Route::group(['middleware' => ['permission:delete user']], function () {
     Route::post('/activateUser/{id}', 'UserController@activate');
 });
 
+
+
 Route::group(['middleware' => ['permission:add user']], function () {
     Route::get('/addUser', 'UserController@addUser');
     Route::post('/addUser', 'UserController@store');
 });
 
 Route::post('/editUser/{id}', 'UserController@update');
+
+// routes of ProductController
+
+Route::resource('product','ProductController');
+
+// routes of CategorieController
+
+Route::resource('categorie','CategorieController');
 

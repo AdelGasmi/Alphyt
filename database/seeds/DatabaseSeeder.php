@@ -51,6 +51,10 @@ class DatabaseSeeder extends Seeder
                 'active' => 1
             ]);
 
+            \App\Categorie::create([
+                'name' => 'categorie N^' . $i
+            ]);
+
             $user->assignRole('provisor');
         }
 

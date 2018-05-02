@@ -155,30 +155,36 @@
                         </ul>
                     </li>
 
-
-                    <li><a href="index.html" class="waves-effect active"><i class="linea-icon linea-basic fa-fw"
-                                                                            data-icon="v"></i> <span class="hide-menu"> Produits </span></a>
+                    <li>
+                        <a href="{{url('categorie')}}" class="waves-effect active">
+                            <i class="fa  fa-list-alt"></i> <span class="hide-menu"> Categorie </span></a>
                     </li>
-
+                    <li>
+                        <a href="{{url('product')}}" class="waves-effect active">
+                            <i class="fa fa-product-hunt"></i> <span class="hide-menu"> Produits </span></a>
+                    </li>
 
             </div>
         </div>
         <!-- /.col-lg-12 -->
-    </div>
-    <!--row -->
-    <div class="row">
-        @yield('content')
-    </div>
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <!--row -->
+                <div class="row">
+                    @yield('content')
+                </div>
 
-</div>
-<!-- /.container-fluid -->
-<footer class="footer text-center">  <span>Powered by Stqdam version 1.0.0  <a class="text-primary"
-                                                                               href="http://stqdam.com"
-                                                                               target="_blank">stqdam.com</a></span>
-</footer>
-</div>
-<!-- /#page-wrapper -->
-</div>
+            </div>
+            <!-- /.container-fluid -->
+            <footer class="footer text-center">  <span>Powered by Stqdam version 1.0.0  <a class="text-primary"
+                                                                                           href="http://stqdam.com"
+                                                                                           target="_blank">stqdam.com</a></span>
+            </footer>
+        </div>
+
+
+        <!-- /#page-wrapper -->
+    </div>
 </div>
 <script>
 
@@ -206,25 +212,8 @@
 <!--Wave Effects -->
 <script src="{{asset('dashboard/js/waves.js')}}"></script>
 <script src="{{asset('dashboard/js/custom.js')}}"></script>
-<script src="{{asset('js/LanguageSwitcher.js')}}"></script>
-<script src="{{asset('js/notification.js')}}"></script>
 
-<script>
-    $('#{{$active}}').addClass('active');
-    @if(app()->getLocale()==='ar')
-    $('.fa.arrow').addClass('fa-angle-left').removeClass('arrow')
-    $('.icon-arrow-left-circle').addClass('icon-arrow-right-circle').removeClass('.icon-arrow-left-circle')
-    $('.page-title').closest('div').removeClass('col-md-pull-8')
-    $('.breadcrumb').closest('div').removeClass('col-md-push-4')
-    @endif
-</script>
-<script src="{{asset('js/timeago/jquery.timeago.js')}}"></script>
-@if(app()->getLocale()!='en')
-    <script src="{{asset('js/timeago/jquery.timeago.'.app()->getLocale().'.js')}}"></script>
-@endif
-<script>
-    jQuery("time.timeago").timeago();
-</script>
+
 @yield('js')
 </body>
 

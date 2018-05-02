@@ -200,10 +200,10 @@
                                                                     aria-hidden="true">&times;</span>
                                                         </button>
                                                         <h4 class="modal-title"
-                                                            id="exampleModalLabel1">{{__('dashboard.activateUser')}} </h4>
+                                                            id="exampleModalLabel1">Active utilisateur </h4>
                                                     </div>
                                                     <div class="modal-body">
-                                                        {{__('dashboard.confirmActivation')}}
+                                                        Vous etes sure ??
                                                     </div>
                                                     <div class="col-md-12 text-center">
                                                         <br>
@@ -215,7 +215,7 @@
                                                             </button>
                                                             <button type="button" class="btn btn-default"
                                                                     data-dismiss="modal">
-                                                                {{__('dashboard.close')}}
+                                                                Annuler
                                                             </button>
                                                         </form>
                                                     </div>
@@ -251,37 +251,7 @@
     <!-- end - This is for export functionality only -->
     <script>
 
-        $('#allUsers').DataTable({
-            dom: 'Bfrtip',
-            buttons: [
-                {
-                    extend: 'print',
-                    exportOptions:
-                        {
-                            columns: [0, 1, 3, 4, 5]
-                        }
-                }
-            ],
-            @if(app()->getLocale()=='ar')
-            "language": {
-                "sProcessing": "جارٍ التحميل...",
-                "sLengthMenu": "أظهر _MENU_ مدخلات",
-                "sZeroRecords": "لم يعثر على أية سجلات",
-                "sInfo": "إظهار _START_ إلى _END_ من أصل _TOTAL_ مدخل",
-                "sInfoEmpty": "يعرض 0 إلى 0 من أصل 0 سجل",
-                "sInfoFiltered": "(منتقاة من مجموع _MAX_ مُدخل)",
-                "sInfoPostFix": "",
-                "sSearch": "ابحث:",
-                "sUrl": "",
-                "oPaginate": {
-                    "sFirst": "الأول",
-                    "sPrevious": "السابق",
-                    "sNext": "التالي",
-                    "sLast": "الأخير"
-                }
-            }
-            @endif
-        });
+        $('#allUsers').DataTable();
 
         $('.dt-button').removeClass('dt-button').addClass('btn btn-danger waves-effect waves-light m-r-10 ')
     </script>
