@@ -157,7 +157,7 @@
 
 
                     <li><a href="index.html" class="waves-effect active"><i class="linea-icon linea-basic fa-fw"
-                                                                            data-icon="v"></i> <span class="hide-menu"> Dashboard </span></a>
+                                                                            data-icon="v"></i> <span class="hide-menu"> Produits </span></a>
                     </li>
 
 
