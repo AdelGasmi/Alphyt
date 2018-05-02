@@ -156,21 +156,9 @@
                     </li>
 
 
-                    <ul class="nav" id="side-menu">
-                        <li>
-                            <a id="products" href="javascript:void(0);" class="waves-effect">
-                                <i class="icon-people fa-fw"></i>
-                                <span class="hide-menu">
-    Produits
-                                <span class="fa arrow"></span>
-        </span>
-                            </a>
-
-                            <ul class="nav nav-second-level">
-                                <li><a href="{{url('addUser/')}}">Ajouter Utilisateur</a></li>
-                            </ul>
-
-                        </li>
+                    <li><a href="index.html" class="waves-effect active"><i class="linea-icon linea-basic fa-fw"
+                                                                            data-icon="v"></i> <span class="hide-menu"> Dashboard </span></a>
+                    </li>
 
 
             </div>

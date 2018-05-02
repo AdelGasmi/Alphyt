@@ -97,7 +97,7 @@
                                 <div class="col-md-12 text-center">
 
                                     <button type="submit" class="btn btn-info waves-effect waves-light m-r-10 center-">
-                                        <Ajouter></Ajouter>
+                                        Ajouter
                                     </button>
                                 </div>
                             </div>
