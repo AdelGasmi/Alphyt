@@ -39,8 +39,20 @@ class DatabaseSeeder extends Seeder
             'active' => 1
         ]);
 
+
         $admin->assignRole('admin');
 
         $role->givePermissionTo(Permission::all());
+        for ($i = 0; $i < 10; $i++) {
+            $user = \App\User::create([
+                'name' => 'provisor',
+                'email' => $i . 'provisor@provisor.com',
+                'password' => bcrypt('123456'),
+                'active' => 1
+            ]);
+
+            $user->assignRole('provisor');
+        }
+
     }
 }

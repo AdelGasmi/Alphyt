@@ -31,30 +31,16 @@
             <table id="allUsers" class="display responsive nowrap" cellspacing="0" width="100%">
                 <thead>
                 <tr>
-                    <th class="text-center">{{__('dashboard.name')}}</th>
-                    <th class="text-center">{{__('dashboard.email')}}</th>
-                    <th class="text-center">{{__('dashboard.avatar')}}</th>
-                    <th class="text-center">{{__('dashboard.address')}}</th>
-                    <th class="text-center">{{__('dashboard.phone')}}</th>
-                    <th class="text-center">{{__('dashboard.identityNumber')}}</th>
-                    <th class="text-center">{{__('dashboard.active')}}</th>
-                    <th class="text-center">{{__('dashboard.edit')}}</th>
-                    <th class="text-center">{{__('dashboard.deleteOrActivate')}}</th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">E-mail</th>
+                    <th class="text-center">Avatar</th>
+                    <th class="text-center">Status</th>
+                    <th class="text-center">Modifier</th>
+                    <th class="text-center">Active/Desactive</th>
 
                 </tr>
                 </thead>
-                <tfoot>
-                <tr>
-                    <th class="text-center">{{__('dashboard.name')}}</th>
-                    <th class="text-center">{{__('dashboard.email')}}</th>
-                    <th class="text-center">{{__('dashboard.avatar')}}</th>
-                    <th class="text-center">{{__('dashboard.address')}}</th>
-                    <th class="text-center">{{__('dashboard.phone')}}</th>
-                    <th class="text-center">{{__('dashboard.identityNumber')}}</th>
-                    <th class="text-center">{{__('dashboard.active')}}</th>
-                    <th class="text-center">{{__('dashboard.edit')}}</th>
-                    <th class="text-center del">{{__('dashboard.deleteOrActivate')}}</th>
-                </tr>
+
                 </tfoot>
                 <tbody>
                 @foreach($users as $user)
@@ -66,18 +52,15 @@
                                 <img class="img-circle" style="height: 60px;width: 60px"
                                      src="{{asset('avatar/'.$user->avatar)}}" alt="">
                             </td>
-                            <td class="text-center">{{$user->address}}</td>
-                            <td class="text-center">{{$user->phone}}</td>
-                            <td class="text-center">{{$user->identityNumber}}</td>
                             <td class="text-center">
 
                                 @if($user->active)
                                     <div class="label label-success">
-                                        {{__('dashboard.active')}}
+                                        Active
                                     </div>
                                 @else
                                     <div class="label label-danger">
-                                        {{__('dashboard.inactive')}}
+                                        Desactive
                                     </div>
 
                                 @endif
@@ -90,7 +73,7 @@
                                      <span class="btn-label">
                                         <i class="fa fa-edit"></i>
                                      </span>
-                                    {{__('dashboard.edit')}}
+                                    Modifier
                                 </button>
 
                                 <div class="modal fade" id="edit{{$user->id}}" tabindex="-1" role="dialog"
@@ -103,7 +86,7 @@
                                                             aria-hidden="true">&times;</span>
                                                 </button>
                                                 <h4 class="modal-title"
-                                                    id="exampleModalLabel1">{{__('dashboard.editUser')}} </h4>
+                                                    id="exampleModalLabel1">Modifier</h4>
                                             </div>
                                             <div class="modal-body">
 
@@ -113,64 +96,34 @@
 
                                                 <div class="form-group">
                                                     <label class="col-md-12"
-                                                           for="example-text">{{__('dashboard.name')}}
+                                                           for="example-text">Name
                                                     </label>
                                                     <div class="col-md-12">
                                                         <input required="true" name="name" type="text"
                                                                value="{{$user->name}}"
                                                                class="form-control"
-                                                               placeholder="{{__('dashboard.namePlaceholder')}}">
+                                                               placeholder="">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-md-12"
-                                                           for="example-email">{{__('dashboard.email')}}
+                                                           for="example-email">E-mail
                                                     </label>
                                                     <div class="col-md-12">
                                                         <input required="true" name="email" type="email"
                                                                value="{{$user->email}}"
                                                                class="form-control"
-                                                               placeholder="{{__('dashboard.emailPlaceholder')}}">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-md-12"
-                                                           for="example-phone">{{__('dashboard.phone')}}
-                                                    </label>
-                                                    <div class="col-md-12">
-                                                        <input required="true" name="phone" type="text"
-                                                               class="form-control"
-                                                               value="{{$user->phone}}"
-                                                               placeholder="{{__('dashboard.phonePlaceholder')}}">
+                                                               placeholder="">
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group">
-                                                    <label class="col-md-12"
-                                                           for="example-phone">{{__('dashboard.address')}}
-                                                    </label>
-                                                    <div class="col-md-12">
-                                                        <input name="address" type="text" class="form-control"
-                                                               value="{{$user->address}}"
-                                                               placeholder="{{__('dashboard.addressPlaceholder')}}">
 
-                                                    </div>
-                                                </div>
-                                                <div class="form-group ">
-                                                    <label class="col-md-12" for="example-phone">
-                                                        {{__('dashboard.identityNumber')}}
-                                                    </label>
-                                                    <input name="identityNumber" type="text" class="form-control"
-                                                           value="{{$user->identityNumber}}"
-
-                                                           placeholder="{{__('dashboard.identityNumber')}}">
-                                                </div>
                                                 <div class="col-md-12 text-center">
                                                     <br>
-                                                    <button class="btn btn-info"> {{__('dashboard.submit')}}</button>
+                                                    <button class="btn btn-info"> Sauvgarde</button>
                                                     {!! Form::close() !!}
                                                     <button type="button" class="btn btn-default" data-dismiss="modal">
-                                                        {{__('dashboard.close')}}
+                                                        Annuler
                                                     </button>
                                                 </div>
 
@@ -190,7 +143,7 @@
                                      <span class="btn-label">
                                         <i class="fa fa-times"></i>
                                      </span>
-                                            {{__('dashboard.blocking')}}
+                                            Desactiver l'utilisateur
                                         </button>
                                         <div class="modal fade" id="delete{{$user->id}}" tabindex="-1" role="dialog"
                                              aria-labelledby="exampleModalLabel1">
@@ -202,10 +155,10 @@
                                                                     aria-hidden="true">&times;</span>
                                                         </button>
                                                         <h4 class="modal-title"
-                                                            id="exampleModalLabel1">{{__('dashboard.deleteUser')}} </h4>
+                                                            id="exampleModalLabel1"> Desactiver l'utilisateur </h4>
                                                     </div>
                                                     <div class="modal-body">
-                                                        {{__('dashboard.confirmDelete')}}
+                                                        Vous etes sure ??
                                                     </div>
                                                     <div class="col-md-12 text-center">
                                                         <br>
@@ -213,11 +166,11 @@
                                                               method="post">
                                                             {{csrf_field()}}
                                                             <button class="btn btn-info" type="submit">
-                                                                {{__('dashboard.submit')}}
+                                                                Sauvgarder
                                                             </button>
                                                             <button type="button" class="btn btn-default"
                                                                     data-dismiss="modal">
-                                                                {{__('dashboard.close')}}
+                                                                Annuler
                                                             </button>
                                                         </form>
                                                     </div>
@@ -234,7 +187,7 @@
                                      <span class="btn-label">
                                         <i class="fa fa-times"></i>
                                      </span>
-                                            {{__('dashboard.activate')}}
+                                            Activer l'utilisateur
                                         </button>
                                         <div class="modal fade" id="activate{{$user->id}}" tabindex="-1"
                                              role="dialog"
@@ -258,7 +211,7 @@
                                                               method="post">
                                                             {{csrf_field()}}
                                                             <button class="btn btn-info" type="submit">
-                                                                {{__('dashboard.submit')}}
+                                                                Sauvgarde
                                                             </button>
                                                             <button type="button" class="btn btn-default"
                                                                     data-dismiss="modal">

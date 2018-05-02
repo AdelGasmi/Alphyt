@@ -31,7 +31,7 @@
                 <div class="white-box">
                     <div class="row">
                         <h3 class="box-title">
-                            {{__('dashboard.userInfo')}}
+                           Information de utilisateur
                         </h3>
                         <form action="{{url('addUser')}}" method="post">
                             {!! csrf_field() !!}
@@ -39,67 +39,48 @@
 
                             <div class="col-md-6">
                                 <h3>
-                                    {{__('dashboard.name')}}
+                                    Name
                                 </h3>
 
                                 <input required="true" name="name" type="text" value="{{old('name')}}"
-                                       class="form-control" placeholder="{{__('dashboard.namePlaceholder')}}">
+                                       class="form-control" placeholder="">
                                 <br>
                             </div>
                             <div class="col-md-6">
                                 <h3>
-                                    {{__('dashboard.email')}}
+                                   E-mail
                                 </h3>
                                 <input required="true" name="email" type="email" value="{{old('email')}}"
-                                       class="form-control" placeholder="{{__('dashboard.emailPlaceholder')}}">
+                                       class="form-control" placeholder="">
                                 <br>
                             </div>
                             <div class="col-md-6">
                                 <h3>
-                                    {{__('dashboard.newPassword')}}
+                                    Mot de passe
                                 </h3>
                                 <div class="col-md-12">
                                     <input required="true" name="password" type="password"
                                            class="form-control"
-                                           placeholder="{{__('dashboard.confirmNewPasswordPlaceholder')}}">
+                                           placeholder="">
                                     <br>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <h3>
-                                    {{__('dashboard.confirmNewPassword')}}
+                                   Confirmer le mot de passe
                                 </h3>
                                 <div class="col-md-12">
                                     <input required="true" name="password_confirmation" type="password"
                                            class="form-control"
-                                           placeholder=" {{__('dashboard.confirmNewPasswordPlaceholder')}}">
+                                           placeholder="">
                                     <br>
                                 </div>
                             </div>
 
 
-                            <div class="col-md-6">
-                                <h3>
-                                    {{__('dashboard.phone')}}
-                                </h3>
-                                <input required="true" name="phone" type="text" class="form-control"
-                                       value="{{old('phone')}}"
-                                       placeholder="{{__('dashboard.phonePlaceholder')}}">
-                                <br>
-                            </div>
-
-                            <div class="col-md-6">
-                                <h3>
-                                    {{__('dashboard.address')}}
-                                </h3>
-                                <input name="address" type="text" class="form-control" value="{{old('address')}}"
-
-                                       placeholder="{{__('dashboard.addressPlaceholder')}}">
-                                <br>
-                            </div>
                             <div class="col-md-12">
                                 <h3>
-                                    {{__('dashboard.role')}}
+                                    rôle
                                 </h3>
 
                                 <select name="role" class="form-control">
@@ -116,7 +97,7 @@
                                 <div class="col-md-12 text-center">
 
                                     <button type="submit" class="btn btn-info waves-effect waves-light m-r-10 center-">
-                                        {{__('dashboard.submit')}}
+                                        <Ajouter></Ajouter>
                                     </button>
                                 </div>
                             </div>
