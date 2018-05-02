@@ -51,8 +51,15 @@ class DatabaseSeeder extends Seeder
                 'active' => 1
             ]);
 
-            \App\Categorie::create([
+            $categorie = \App\Categorie::create([
                 'name' => 'categorie N^' . $i
+            ]);
+            \App\Product::create([
+                'title' => 'product-'.$i,
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci, aut delectus, dicta dolores dolorum, eos fugit hic minus necessitatibus odio perspiciatis quibusdam velit. A debitis eaque eos quasi velit.',
+                'price' => '250',
+                'img' => 'green.jpg',
+                'categorie_id' => $categorie->id,
             ]);
 
             $user->assignRole('provisor');
