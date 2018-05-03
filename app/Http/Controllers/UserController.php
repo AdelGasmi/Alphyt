@@ -91,7 +91,7 @@ class UserController extends Controller
 
         return view('dashboard.user.showUser')->with([
             'active'=>'user',
-            'title'=>__('dashboard.profile'),
+            'title'=>'Profile',
             'user'=>$user
         ]);
     }
@@ -166,7 +166,7 @@ class UserController extends Controller
     {
         return view('dashboard.user.profile')->with([
             'active' => 'profile',
-            'title' => __('dashboard.profile'),
+            'title' => 'Profile',
         ]);
     }
 

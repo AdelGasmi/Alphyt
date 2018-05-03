@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
@@ -52,4 +50,10 @@ Route::resource('product','ProductController');
 // routes of CategorieController
 
 Route::resource('categorie','CategorieController');
+
+// routes of PageController
+Route::get('/', 'PageController@home');
+Route::get('/about', 'PageController@about');
+Route::get('/products', 'PageController@products');
+
 

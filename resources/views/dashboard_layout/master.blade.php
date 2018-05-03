@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('dashboard/plugins/images/favicon.png')}}">
-    <title>{{$title}} - {{__('dashboard.dashboard')}}</title>
+    <title>{{$title}} </title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <script>
@@ -176,10 +176,7 @@
 
             </div>
             <!-- /.container-fluid -->
-            <footer class="footer text-center">  <span>Powered by Stqdam version 1.0.0  <a class="text-primary"
-                                                                                           href="http://stqdam.com"
-                                                                                           target="_blank">stqdam.com</a></span>
-            </footer>
+            <footer class="footer text-center"></footer>
         </div>
 
 
