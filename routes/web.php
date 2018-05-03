@@ -55,5 +55,8 @@ Route::resource('categorie','CategorieController');
 Route::get('/', 'PageController@home');
 Route::get('/about', 'PageController@about');
 Route::get('/products', 'PageController@products');
+Route::get('/quality', 'PageController@quality');
+Route::get('/numbers', 'PageController@numbers');
+Route::get('/environment', 'PageController@environment');
 
 

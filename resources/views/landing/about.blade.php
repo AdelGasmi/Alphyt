@@ -44,20 +44,7 @@
                                 class="verttext">l'Algérienne des phytosanitaires</span> poursuit son développement
                         grâce à la stratégie mise en place et oeuvre pour
                         une amélioration constante de la qualité afin de répondre aux attentes de sa clientèle. </p>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <ul class="list2">
-                                <li>Landjaeger sausage strip steak</li>
-                                <li>Chuck ribeye ball tip capicola</li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-6">
-                            <ul class="list2">
-                                <li>Frankfurter strip steak shoulder</li>
-                                <li>Drumstick short loin cupim</li>
-                            </ul>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -126,37 +113,5 @@
         </div>
     </section>
 
-    <section id="partners" class="ls ms section_padding_50">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                    <div class="owl-carousel partners-carousel" data-responsive-lg="7" data-responsive-md="5"
-                         data-responsive-sm="4" data-responsive-xs="2">
-                        <a href="#">
-                            <img src="images/partners/01.png" alt=""/>
-                        </a>
-                        <a href="#">
-                            <img src="images/partners/02.png" alt=""/>
-                        </a>
-                        <a href="#">
-                            <img src="images/partners/03.png" alt=""/>
-                        </a>
-                        <a href="#">
-                            <img src="images/partners/04.png" alt=""/>
-                        </a>
-                        <a href="#">
-                            <img src="images/partners/05.png" alt=""/>
-                        </a>
-                        <a href="#">
-                            <img src="images/partners/06.png" alt=""/>
-                        </a>
-                        <a href="#">
-                            <img src="images/partners/07.png" alt=""/>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 @endsection

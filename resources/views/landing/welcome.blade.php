@@ -558,37 +558,6 @@
         </div>
     </section>
 
-    <section id="partners" class="ls ms section_padding_50">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                    <div class="owl-carousel partners-carousel" data-responsive-lg="7" data-responsive-md="5" data-responsive-sm="4" data-responsive-xs="2">
-                        <a href="#">
-                            <img src="images/partners/01.png" alt="" />
-                        </a>
-                        <a href="#">
-                            <img src="images/partners/02.png" alt="" />
-                        </a>
-                        <a href="#">
-                            <img src="images/partners/03.png" alt="" />
-                        </a>
-                        <a href="#">
-                            <img src="images/partners/04.png" alt="" />
-                        </a>
-                        <a href="#">
-                            <img src="images/partners/05.png" alt="" />
-                        </a>
-                        <a href="#">
-                            <img src="images/partners/06.png" alt="" />
-                        </a>
-                        <a href="#">
-                            <img src="images/partners/07.png" alt="" />
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
 @endsection

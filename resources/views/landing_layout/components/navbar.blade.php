@@ -21,6 +21,15 @@
                             <li id="products-button" class="">
                                 <a href="{{url('products')}}">Produits</a>
                             </li>
+                            <li id="products-button" class="">
+                                <a href="{{url('quality')}}">La Qualite</a>
+                            </li>
+                            <li id="products-button" class="">
+                                <a href="{{url('numbers')}}">Chiffres</a>
+                            </li>
+                            <li id="products-button" class="">
+                                <a href="{{url('environment')}}">Environnement</a>
+                            </li>
 
                         </ul>
                     </nav>
