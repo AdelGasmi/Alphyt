@@ -9,8 +9,8 @@
                         <table  id="permissionsTable" class="display responsive nowrap">
                             <thead>
                             <tr>
-                                <th class="text-center">{{__('permissions.role')}}</th>
-                                <th class="text-center">{{__('permissions.permissions')}}</th>
+                                <th class="text-center">Role</th>
+                                <th class="text-center">Modifier permissions</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -28,7 +28,7 @@
                                     <span class="btn-label">
                                         <i class="fa fa-edit"></i>
                                      </span>
-                                            {{__('dashboard.edit')}}
+                                            Modifier
                                         </a>
                                     </td>
 

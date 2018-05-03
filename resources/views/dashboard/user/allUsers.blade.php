@@ -35,13 +35,18 @@
                     <th class="text-center">E-mail</th>
                     <th class="text-center">Avatar</th>
                     <th class="text-center">Status</th>
-                    <th class="text-center">Modifier</th>
-                    <th class="text-center">Active/Desactive</th>
+                    @can('edit user')
+                        <th class="text-center">Modifier</th>
+                    @endcan
+
+                    @can('delete user')
+                        <th class="text-center">Active/Desactive</th>
+                    @endcan
 
                 </tr>
                 </thead>
 
-                </tfoot>
+
                 <tbody>
                 @foreach($users as $user)
                     @if($user->id!=auth()->id())
@@ -65,75 +70,80 @@
 
                                 @endif
                             </td>
-                            <td class="text-center">
-                                <button type="button"
-                                        class="fcbtn btn btn-outline btn-info btn-1fbtn-info btn-rounded "
-                                        data-toggle="modal"
-                                        data-target="#edit{{$user->id}}">
+                            @can('edit user')
+
+                                <td class="text-center">
+                                    <button type="button"
+                                            class="fcbtn btn btn-outline btn-info btn-1fbtn-info btn-rounded "
+                                            data-toggle="modal"
+                                            data-target="#edit{{$user->id}}">
                                      <span class="btn-label">
                                         <i class="fa fa-edit"></i>
                                      </span>
-                                    Modifier
-                                </button>
+                                        Modifier
+                                    </button>
 
-                                <div class="modal fade" id="edit{{$user->id}}" tabindex="-1" role="dialog"
-                                     aria-labelledby="exampleModalLabel1">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close"><span
-                                                            aria-hidden="true">&times;</span>
-                                                </button>
-                                                <h4 class="modal-title"
-                                                    id="exampleModalLabel1">Modifier</h4>
-                                            </div>
-                                            <div class="modal-body">
-
-                                                {!! Form::open(["url"=>"editUser/".$user->id]) !!}
-                                                {!! csrf_field() !!}
-
-
-                                                <div class="form-group">
-                                                    <label class="col-md-12"
-                                                           for="example-text">Name
-                                                    </label>
-                                                    <div class="col-md-12">
-                                                        <input required="true" name="name" type="text"
-                                                               value="{{$user->name}}"
-                                                               class="form-control"
-                                                               placeholder="">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-md-12"
-                                                           for="example-email">E-mail
-                                                    </label>
-                                                    <div class="col-md-12">
-                                                        <input required="true" name="email" type="email"
-                                                               value="{{$user->email}}"
-                                                               class="form-control"
-                                                               placeholder="">
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="col-md-12 text-center">
-                                                    <br>
-                                                    <button class="btn btn-info"> Sauvgarde</button>
-                                                    {!! Form::close() !!}
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">
-                                                        Annuler
+                                    <div class="modal fade" id="edit{{$user->id}}" tabindex="-1" role="dialog"
+                                         aria-labelledby="exampleModalLabel1">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close"><span
+                                                                aria-hidden="true">&times;</span>
                                                     </button>
+                                                    <h4 class="modal-title"
+                                                        id="exampleModalLabel1">Modifier</h4>
                                                 </div>
+                                                <div class="modal-body">
 
+                                                    {!! Form::open(["url"=>"editUser/".$user->id]) !!}
+                                                    {!! csrf_field() !!}
+
+
+                                                    <div class="form-group">
+                                                        <label class="col-md-12"
+                                                               for="example-text">Name
+                                                        </label>
+                                                        <div class="col-md-12">
+                                                            <input required="true" name="name" type="text"
+                                                                   value="{{$user->name}}"
+                                                                   class="form-control"
+                                                                   placeholder="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-12"
+                                                               for="example-email">E-mail
+                                                        </label>
+                                                        <div class="col-md-12">
+                                                            <input required="true" name="email" type="email"
+                                                                   value="{{$user->email}}"
+                                                                   class="form-control"
+                                                                   placeholder="">
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-md-12 text-center">
+                                                        <br>
+                                                        <button class="btn btn-info"> Sauvgarde</button>
+                                                        {!! Form::close() !!}
+                                                        <button type="button" class="btn btn-default"
+                                                                data-dismiss="modal">
+                                                            Annuler
+                                                        </button>
+                                                    </div>
+
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </td>
-                            <td class="text-center">
-                                @if(auth()->user()->hasRole('admin') )
+                                </td>
+                            @endcan
+
+                            @can('delete user')
+                                <td class="text-center">
                                     @if($user->active)
                                         <button type="button"
                                                 class="fcbtn btn btn-outline btn-danger btn-1fbtn-info btn-rounded"
@@ -224,9 +234,9 @@
                                             </div>
                                         </div>
                                     @endif
-                                @endif
 
-                            </td>
+                                </td>
+                            @endcan
 
                         </tr>
                     @endif

@@ -50,6 +50,9 @@ Route::resource('product','ProductController');
 // routes of CategorieController
 
 Route::resource('categorie','CategorieController');
+// routes of RoleController
+
+Route::resource('role','RoleController');
 
 // routes of PageController
 Route::get('/', 'PageController@home');
@@ -58,5 +61,12 @@ Route::get('/products', 'PageController@products');
 Route::get('/quality', 'PageController@quality');
 Route::get('/numbers', 'PageController@numbers');
 Route::get('/environment', 'PageController@environment');
+
+
+// routes of PermissionController
+Route::get('permissions/', 'PermissionController@index');
+Route::get('permissionsOf/{role}', 'PermissionController@permissionsOf');
+Route::post('updatePermissionsOf/{role}', 'PermissionController@updatePermissionsOf');
+
 
 

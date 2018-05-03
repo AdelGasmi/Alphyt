@@ -154,13 +154,29 @@
 
                         </ul>
                     </li>
+                    @can('access to list roles')
+                        <li><a href="{{url('role')}}">
+                                <i class=" icon-badge fa-fw"></i>
+                                Role
+                            </a>
+                        </li>
+                    @endcan
+                    @can('modify user permissions')
+                        <li><a href="{{url('permissions')}}">
+                                <i class=" fa fa-sitemap fa-fw"></i>
+                                Permission
+                            </a>
+                        </li>
+                    @endcan
+
+
 
                     <li>
-                        <a href="{{url('categorie')}}" class="waves-effect active">
+                        <a href="{{url('categorie')}}" class="waves-effect ">
                             <i class="fa  fa-list-alt"></i> <span class="hide-menu"> Categorie </span></a>
                     </li>
                     <li>
-                        <a href="{{url('product')}}" class="waves-effect active">
+                        <a href="{{url('product')}}" class="waves-effect ">
                             <i class="fa fa-product-hunt"></i> <span class="hide-menu"> Produits </span></a>
                     </li>
 

@@ -31,6 +31,21 @@ class DatabaseSeeder extends Seeder
         Permission::create([
             'name' => 'access to list users'
         ]);
+        Permission::create([
+            'name' => 'edit role'
+        ]);
+        Permission::create([
+            'name' => 'add role'
+        ]);
+        Permission::create([
+            'name' => 'delete role'
+        ]);
+        Permission::create([
+            'name' => 'access to list roles'
+        ]);
+        Permission::create([
+            'name' => 'modify user permissions'
+        ]);
 
         $admin = \App\User::create([
             'name' => 'admin',

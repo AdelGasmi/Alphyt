@@ -20,7 +20,7 @@
                             <thead>
                             <tr>
                                 <th></th>
-                                <th class="text-center">{{__('permissions.permission')}}</th>
+                                <th class="text-center">permissions</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -42,7 +42,7 @@
                         </table>
                         <div class="col-md-12 text-center">
                             <button type="submit" class="btn btn-success btn-rounded ">
-                                {{__('dashboard.submit')}}
+                                Sauvgarder
                             </button>
                         </div>
 
