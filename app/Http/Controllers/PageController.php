@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Page;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class PageController extends Controller
 {
@@ -15,39 +17,55 @@ class PageController extends Controller
     }
 
 
-    public function about()
+    public function index()
     {
-        return view('landing.about')->with([
-            'active' => 'about-button'
+        return view('dashboard.page.index')->with([
+            'pages' => Page::all(),
+            'title' => 'Pages'
         ]);
     }
 
-    public function quality()
+
+
+    public function store(Request $request)
     {
-        return view('landing.quality')->with([
-            'active' => 'quality-button'
+        $rules = [
+            'title' => 'required',
+            'content' => 'required',
+        ];
+
+        $this->validate($request, $rules);
+
+        Page::create($request->all());
+
+        Session::Flash('success', 'Le processus a été avec succès');
+        return redirect()->back();
+    }
+
+
+    public function edit($id)
+    {
+        $page=Page::find($id);
+        return view('dashboard.page.edit')->with([
+            'page' => $page,
+            'title' => 'Page- '.$page->title
         ]);
     }
 
-    public function numbers()
+    public function update(Request $request, $id)
     {
-        return view('landing.numbers')->with([
-            'active' => 'numbers-button'
-        ]);
+        $page = Page::find($id);
+        $page->update($request->all());
+        Session::Flash('success', 'Modifié avec succès');
+        return redirect()->back();
     }
 
-    public function environment()
+
+    public function destroy($id)
     {
-        return view('landing.environment')->with([
-            'active' => 'environment-button'
-        ]);
+        Page::destroy('id', $id);
+        return redirect()->back();
     }
 
-    public function products()
-    {
-        return view('landing.products')->with([
-            'active' => 'products-button',
-            'products' => Product::paginate(10)
-        ]);
-    }
+
 }

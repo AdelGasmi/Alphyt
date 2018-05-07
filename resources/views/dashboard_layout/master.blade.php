@@ -170,7 +170,6 @@
                     @endcan
 
 
-
                     <li>
                         <a href="{{url('categorie')}}" class="waves-effect ">
                             <i class="fa  fa-list-alt"></i> <span class="hide-menu"> Categorie </span></a>
@@ -178,6 +177,10 @@
                     <li>
                         <a href="{{url('product')}}" class="waves-effect ">
                             <i class="fa fa-product-hunt"></i> <span class="hide-menu"> Produits </span></a>
+                    </li>
+                    <li>
+                        <a href="{{url('page')}}" class="waves-effect ">
+                            <i class="ti-settings"></i> <span class="hide-menu"> Pages </span></a>
                     </li>
 
             </div>

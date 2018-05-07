@@ -12,7 +12,6 @@
 */
 
 
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -35,7 +34,6 @@ Route::group(['middleware' => ['permission:delete user']], function () {
 });
 
 
-
 Route::group(['middleware' => ['permission:add user']], function () {
     Route::get('/addUser', 'UserController@addUser');
     Route::post('/addUser', 'UserController@store');
@@ -45,29 +43,24 @@ Route::post('/editUser/{id}', 'UserController@update');
 
 // routes of ProductController
 
-Route::resource('product','ProductController');
+Route::resource('product', 'ProductController');
 Route::get('product/more/{product_id}', 'ProductController@more');
 Route::patch('product/fields/{product_id}', 'ProductController@updateFields');
 
 // routes of CategorieController
 
-Route::resource('categorie','CategorieController');
-Route::resource('categorie/field','FieldController');
+Route::resource('categorie', 'CategorieController');
+Route::resource('categorie/field', 'FieldController');
 Route::get('categorie/more/{categorie_id}', 'CategorieController@more');
-
 
 
 // routes of RoleController
 
-Route::resource('role','RoleController');
+Route::resource('role', 'RoleController');
 
 // routes of PageController
 Route::get('/', 'PageController@home');
-Route::get('/about', 'PageController@about');
-Route::get('/products', 'PageController@products');
-Route::get('/quality', 'PageController@quality');
-Route::get('/numbers', 'PageController@numbers');
-Route::get('/environment', 'PageController@environment');
+Route::resource('page', 'PageController');
 
 
 // routes of PermissionController
