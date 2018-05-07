@@ -67,7 +67,6 @@
                                 </div>
                             </div>
 
-
                             <div class="col-md-12 text-center">
                                 <br>
                                 <button class="btn btn-info"> Sauvgarde</button>
@@ -89,6 +88,7 @@
                 <thead>
                 <tr>
                     <th class="text-center">Categorie</th>
+                    <th class="text-center">Details</th>
                     <th class="text-center">Modifier</th>
                     <th class="text-center">Active/Desactive</th>
 
@@ -100,7 +100,11 @@
                 @foreach($categories as $categorie)
                     <tr>
                         <td class="text-center">{{$categorie->name}}</td>
-
+                        <td class="text-center">
+                            <a href="{{url('categorie/more/'.$categorie->id)}}" class="btn btn-success btn-rounded btn-outline">
+                                Details
+                            </a>
+                        </td>
                         <td class="text-center">
                             <button type="button"
                                     class="fcbtn btn btn-outline btn-info btn-1fbtn-info btn-rounded "

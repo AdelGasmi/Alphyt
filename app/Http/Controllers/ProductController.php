@@ -40,8 +40,6 @@ class ProductController extends Controller
     {
         $rules = [
             'title' => 'required',
-            'price' => 'required',
-            'description' => 'required',
             'img' => 'required|image',
         ];
 
@@ -53,8 +51,6 @@ class ProductController extends Controller
 
         Product::create([
             'title' => $request->get('title'),
-            'price' => $request->get('price'),
-            'description' => $request->get('description'),
             'categorie_id' => $request->get('categorie_id'),
             'img' => $img
         ]);
@@ -104,8 +100,6 @@ class ProductController extends Controller
         $Product->update([
             'title' => $request->get('title'),
             'categorie_id' => $request->get('categorie_id'),
-            'price' => $request->get('price'),
-            'description' => $request->get('description'),
         ]);
         Session::Flash('success', 'Modifié avec succès');
         return redirect()->back();
@@ -119,7 +113,17 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        Product::destroy('id', $id);
+        Product::destroy($id);
         return redirect()->back();
     }
+
+
+    public function more(Request $request, $id)
+    {
+        return view('dashboard.product.more')->with([
+            'fileds' => F,
+            'fileds' => '',
+        ]);
+    }
+
 }

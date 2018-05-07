@@ -46,10 +46,16 @@ Route::post('/editUser/{id}', 'UserController@update');
 // routes of ProductController
 
 Route::resource('product','ProductController');
+Route::post('product/more/{product_id}', 'ProductController@more');
 
 // routes of CategorieController
 
 Route::resource('categorie','CategorieController');
+Route::resource('categorie/field','FieldController');
+Route::get('categorie/more/{categorie_id}', 'CategorieController@more');
+
+
+
 // routes of RoleController
 
 Route::resource('role','RoleController');

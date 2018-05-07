@@ -2,7 +2,6 @@
 
 
 @section('content')
-
     @if(count($errors->all())>0)
         <div class="alert alert-danger text-center col-md-12 ">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -35,7 +34,7 @@
                                      <span class="btn-label">
                                         <i class="fa fa-plus"></i>
                                      </span>
-                Ajouter Produit
+                Ajouter Champ
             </button>
 
             <div class="modal fade" id="addCategorie" tabindex="-1" role="dialog"
@@ -48,43 +47,22 @@
                                         aria-hidden="true">&times;</span>
                             </button>
                             <h4 class="modal-title"
-                                id="exampleModalLabel1">Ajouter Produit</h4>
+                                id="exampleModalLabel1">Ajouter Champ</h4>
                         </div>
                         <div class="modal-body">
 
-                            {!! Form::open(["url"=>"product/",'files'=>'true']) !!}
+                            {!! Form::open(["url"=>"categorie/field"]) !!}
                             {!! csrf_field() !!}
 
                             <div class="form-group">
                                 <label class="col-md-12"
-                                       for="example-text">Title
+                                       for="example-text">Champ
                                 </label>
                                 <div class="col-md-12">
-                                    <input required="true" name="title" type="text"
-                                           value="{{old('title')}}"
+                                    <input required="true" name="name" type="text"
+                                           value=""
                                            class="form-control"
                                            placeholder="">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-12"
-                                       for="example-text">Categorie
-                                </label>
-                                <div class="col-md-12">
-                                    <select name="categorie_id" class="form-control" required>
-                                        @foreach(\App\Categorie::all() as $categorie)
-                                            <option value="{{$categorie->id}}" >{{$categorie->name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-12"
-                                       for="example-text">Image
-                                </label>
-                                <div class="col-md-12">
-                                    <input type="file" name="img" class="dropify" required/>
                                 </div>
                             </div>
 
@@ -106,43 +84,33 @@
     </div>
     <div class="col-sm-12">
         <div class="white-box">
-            <table id="productTable" class="display responsive nowrap" cellspacing="0" width="100%">
+            <table id="champsTable" class="display responsive nowrap" cellspacing="0" width="100%">
                 <thead>
                 <tr>
-                    <th class="text-center">Title</th>
-                    <th class="text-center">Image</th>
-                    <th class="text-center">Categorie</th>
+                    <th class="text-center">Champ</th>
                     <th class="text-center">Modifier</th>
-                    <th class="text-center">Active/Desactive</th>
+                    <th class="text-center">Suprimer</th>
 
                 </tr>
                 </thead>
 
+                </tfoot>
                 <tbody>
-                @foreach($products as $product)
+                @foreach($fields as $field)
                     <tr>
-                        <td class="text-center">{{$product->title}}</td>
-
-                        <td class="text-center"><img style="height: 150px" src="{{asset('img/product/'.$product->img)}}"
-                                                     alt=""
-                                                     class="img-responsive"></td>
-                        <td class="text-center">
-                            @if($product->categorie)
-                                {{$product->categorie->name}}
-                            @endif
-                        </td>
+                        <td class="text-center">{{$field->name}}</td>
                         <td class="text-center">
                             <button type="button"
                                     class="fcbtn btn btn-outline btn-info btn-1fbtn-info btn-rounded "
                                     data-toggle="modal"
-                                    data-target="#edit{{$product->id}}">
+                                    data-target="#edit{{$field->id}}">
                                      <span class="btn-label">
                                         <i class="fa fa-edit"></i>
                                      </span>
                                 Modifier
                             </button>
 
-                            <div class="modal fade" id="edit{{$product->id}}" tabindex="-1" role="dialog"
+                            <div class="modal fade" id="edit{{$field->id}}" tabindex="-1" role="dialog"
                                  aria-labelledby="exampleModalLabel1">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
@@ -156,56 +124,19 @@
                                         </div>
                                         <div class="modal-body">
 
-                                            {!! Form::open(["url"=>"product/".$product->id,'files'=>'true']) !!}
+                                            {!! Form::open(["url"=>'categorie/field/'.$field->id]) !!}
                                             {!! csrf_field() !!}
                                             {!! method_field('PATCH') !!}
 
                                             <div class="form-group">
                                                 <label class="col-md-12"
-                                                       for="example-text">Nom
+                                                       for="example-text">Champ
                                                 </label>
                                                 <div class="col-md-12">
-                                                    <input required="true" name="title" type="text"
-                                                           value="{{$product->title}}"
+                                                    <input required="true" name="name" type="text"
+                                                           value="{{$field->name}}"
                                                            class="form-control"
                                                            placeholder="">
-                                                </div>
-                                            </div>
-
-
-                                            <div class="form-group">
-                                                <label class="col-md-12"
-                                                       for="example-text">Prix
-                                                </label>
-                                                <div class="col-md-12">
-                                                    <input required="true" name="price" type="number"
-                                                           value="{{$product->price}}"
-                                                           class="form-control"
-                                                           placeholder="">
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label class="col-md-12"
-                                                       for="example-text">Categorie
-                                                </label>
-                                                <div class="col-md-12">
-                                                    <select name="categorie_id" class="form-control" id="">
-                                                        @foreach(\App\Categorie::all() as $categorie)
-                                                            <option value="{{$categorie->id}}" {{($categorie->id==$product->categorie->id)?'selected':''}}>{{$categorie->name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="form-group">
-                                                <label class="col-md-12"
-                                                       for="example-text">Image
-                                                </label>
-                                                <div class="col-md-12">
-                                                    <input type="file" name="img" class="dropify"
-                                                           data-default-file="{{asset('img/product/'.$product->img)}}"/>
                                                 </div>
                                             </div>
 
@@ -228,14 +159,14 @@
                             <button type="button"
                                     class="fcbtn btn btn-outline btn-danger btn-1fbtn-info btn-rounded"
                                     data-toggle="modal"
-                                    data-target="#delete{{$product->id}}"
+                                    data-target="#delete{{$field->id}}"
                             >
                                      <span class="btn-label">
                                         <i class="fa fa-times"></i>
                                      </span>
-                                Supprimer Categorie
+                                Supprimer Champ
                             </button>
-                            <div class="modal fade" id="delete{{$product->id}}" tabindex="-1" role="dialog"
+                            <div class="modal fade" id="delete{{$field->id}}" tabindex="-1" role="dialog"
                                  aria-labelledby="exampleModalLabel1">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
@@ -245,14 +176,14 @@
                                                         aria-hidden="true">&times;</span>
                                             </button>
                                             <h4 class="modal-title"
-                                                id="exampleModalLabel1"> Supprimer Categorie </h4>
+                                                id="exampleModalLabel1"> Supprimer Champ </h4>
                                         </div>
                                         <div class="modal-body">
                                             Vous etes sure ??
                                         </div>
                                         <div class="col-md-12 text-center">
                                             <br>
-                                            <form action="{{url('product/'.$product->id)}}"
+                                            <form action="{{url('categorie/field'.$field->id)}}"
                                                   method="post">
                                                 {{csrf_field()}}
                                                 {{method_field('DELETE')}}
@@ -293,17 +224,9 @@
     <!-- end - This is for export functionality only -->
     <script>
 
-        $('#productTable').DataTable();
+        $('#champsTable').DataTable();
 
         $('.dt-button').removeClass('dt-button').addClass('btn btn-danger waves-effect waves-light m-r-10 ')
-    </script>
-    <script src="{{asset('dashboard/plugins/bower_components/dropify/dist/js/dropify.min.js')}}"></script>
-    <script>
-        $(document).ready(function () {
-            // Basic
-            $('.dropify').dropify();
-
-        });
     </script>
 @endsection
 
@@ -319,8 +242,5 @@
           type="text/css"/>
     <link href="https://cdn.datatables.net/responsive/1.0.7/css/responsive.dataTables.min.css" rel="stylesheet"
           type="text/css"/>
-    <link rel="stylesheet"
-          href="{{asset('dashboard/plugins/bower_components/dropify/dist/css/dropify.min.css')}}">
+
 @endsection
-
-

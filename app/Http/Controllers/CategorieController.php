@@ -108,5 +108,12 @@ class CategorieController extends Controller
         return redirect()->back();
     }
 
-
+    public function more(Request $request, $categorie_id)
+    {
+        return view('dashboard.categorie.more')->with([
+            'fields' => Categorie::find($categorie_id)->fields,
+            'title' => 'Champs',
+            'categorie_id' => $categorie_id,
+        ]);
+    }
 }
