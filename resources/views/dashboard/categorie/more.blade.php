@@ -65,6 +65,7 @@
                                            placeholder="">
                                 </div>
                             </div>
+                            <input type="hidden" name="categorie_id" value="{{$categorie_id}}">
 
 
                             <div class="col-md-12 text-center">
@@ -183,7 +184,7 @@
                                         </div>
                                         <div class="col-md-12 text-center">
                                             <br>
-                                            <form action="{{url('categorie/field'.$field->id)}}"
+                                            <form action="{{url('categorie/field/'.$field->id)}}"
                                                   method="post">
                                                 {{csrf_field()}}
                                                 {{method_field('DELETE')}}

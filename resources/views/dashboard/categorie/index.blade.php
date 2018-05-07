@@ -102,7 +102,7 @@
                         <td class="text-center">{{$categorie->name}}</td>
                         <td class="text-center">
                             <a href="{{url('categorie/more/'.$categorie->id)}}" class="btn btn-success btn-rounded btn-outline">
-                                Details
+                                <span class="fa fa-plus"></span> Details
                             </a>
                         </td>
                         <td class="text-center">

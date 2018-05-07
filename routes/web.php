@@ -46,7 +46,8 @@ Route::post('/editUser/{id}', 'UserController@update');
 // routes of ProductController
 
 Route::resource('product','ProductController');
-Route::post('product/more/{product_id}', 'ProductController@more');
+Route::get('product/more/{product_id}', 'ProductController@more');
+Route::patch('product/fields/{product_id}', 'ProductController@updateFields');
 
 // routes of CategorieController
 

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Categorie;
 use App\Product;
+use App\ValueField;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Intervention\Image\Facades\Image;
@@ -118,12 +120,41 @@ class ProductController extends Controller
     }
 
 
-    public function more(Request $request, $id)
+    public function more(Request $request, $product_id)
     {
+        $product = Product::find($product_id);
         return view('dashboard.product.more')->with([
-            'fileds' => F,
-            'fileds' => '',
+            'product' => $product,
+            'title' => $product->name . '- Details'
         ]);
+    }
+
+
+    public function updateFields(Request $request, $product_id)
+    {
+        $product = Product::find($product_id);
+
+        $categorie = Categorie::find($product->categorie_id);
+
+        foreach ($categorie->fields as $field) {
+            $bool = false;
+            foreach ($product->values as $value) {
+                if ($value->field_id == $field->id) {
+                    $bool = true;
+                    $value->update([
+                        'value' => $request->get($field->id)
+                    ]);
+                }
+            }
+            if (!$bool) {
+                ValueField::create([
+                    'product_id' => $product->id,
+                    'field_id' => $field->id,
+                    'value' => $request->get($field->id)
+                ]);
+            }
+        }
+        return redirect()->back();
     }
 
 }

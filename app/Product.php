@@ -16,4 +16,9 @@ class Product extends Model
     {
         return $this->belongsTo('App\Categorie','categorie_id','id');
     }
+
+    public function values()
+    {
+        return $this->hasMany('App\ValueField');
+    }
 }

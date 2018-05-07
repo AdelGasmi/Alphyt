@@ -112,6 +112,7 @@
                     <th class="text-center">Title</th>
                     <th class="text-center">Image</th>
                     <th class="text-center">Categorie</th>
+                    <th class="text-center">Details</th>
                     <th class="text-center">Modifier</th>
                     <th class="text-center">Active/Desactive</th>
 
@@ -130,6 +131,11 @@
                             @if($product->categorie)
                                 {{$product->categorie->name}}
                             @endif
+                        </td>
+                        <td class="text-center">
+                            <a href="{{url('product/more/'.$product->id)}}" class="btn btn-success btn-rounded btn-outline">
+                                <span class="fa fa-plus"></span> Details
+                            </a>
                         </td>
                         <td class="text-center">
                             <button type="button"
@@ -173,17 +179,6 @@
                                             </div>
 
 
-                                            <div class="form-group">
-                                                <label class="col-md-12"
-                                                       for="example-text">Prix
-                                                </label>
-                                                <div class="col-md-12">
-                                                    <input required="true" name="price" type="number"
-                                                           value="{{$product->price}}"
-                                                           class="form-control"
-                                                           placeholder="">
-                                                </div>
-                                            </div>
 
                                             <div class="form-group">
                                                 <label class="col-md-12"
