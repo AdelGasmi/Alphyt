@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Categorie;
 use App\Page;
 use App\Product;
 use Illuminate\Http\Request;
@@ -20,16 +21,23 @@ class PageController extends Controller
     {
         return view('landing.page')->with([
             'active' => $title . '-button',
-            'page' => Page::find($id),
+            'page' => Page::find($id)
         ]);
     }
-
 
     public function index()
     {
         return view('dashboard.page.index')->with([
             'pages' => Page::all(),
             'title' => 'Pages'
+        ]);
+    }
+
+    public function getProducts()
+    {
+        return view('landing.products')->with([
+            'active' => 'products-button',
+            'products' => Categorie::all(),
         ]);
     }
 

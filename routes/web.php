@@ -62,6 +62,7 @@ Route::resource('role', 'RoleController');
 Route::get('/', 'PageController@home');
 Route::resource('page', 'PageController');
 Route::get('/page/{id}/{title}', 'PageController@getPage');
+Route::get('/products/', 'PageController@getProducts');
 
 
 // routes of PermissionController

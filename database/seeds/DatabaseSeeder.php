@@ -66,20 +66,12 @@ class DatabaseSeeder extends Seeder
                 'active' => 1
             ]);
 
-            $categorie = \App\Categorie::create([
-                'name' => 'categorie N^' . $i
-            ]);
-            \App\Product::create([
-                'title' => 'product-' . $i,
-                'img' => 'green.jpg',
-                'categorie_id' => $categorie->id,
-            ]);
-
             $user->assignRole('provisor');
 
-
-
         }
+
+//        Add Page
+
         \App\Page::create([
             'title' => 'Unités',
             'content' => '',
@@ -98,6 +90,217 @@ class DatabaseSeeder extends Seeder
         \App\Page::create([
             'title' => 'Partenaires',
             'content' => '',
+        ]);
+
+//        Add  Category
+
+        $category = \App\Categorie::create([
+            'name' => 'Produits Phytosanitaires pour l Hygiéne Publique'
+        ]);
+//            Add Field For this Category
+        \App\CategorieField::create([
+            'name' => 'GAMME DE PRODUIT ',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'APPELLATION COMMERCIALE',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'DESCRIPTION ',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'SUBSTANCE ACTIVE ',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'SPECTRE D’ACTION ',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'LIEUX DE DESINFECTION ',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'TRAITEMENT DES BATIMENTS D’ELEVAGES ET DU MATERIEL DE TRANSPORT DES ANIMAUX DOMESTIQUES ',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'PRECAUTIONS D’EMPLOI',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'PERSISTANCE D’ACTION ',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'TOXICITE',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'PRECAUTIONS D’EMPLOI',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'IMPORTANT',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'EN CAS D’INTOXICATION',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'EMBALLAGE',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'UNITE DE PRODUCTION',
+            'categorie_id' => $category->id
+        ]);
+
+
+        $category = \App\Categorie::create([
+            'name' => 'Produits Phytosanitaires à Usage Agricole '
+        ]);
+//            Add Field For this Category
+        \App\CategorieField::create([
+            'name' => 'GAMME DE PRODUIT ',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'APPELLATION COMMERCIALE',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'DESCRIPTION ',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'FORMULATION ',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'SUBSTANCE ACTIVE ',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'SPECTRE D’ACTION ET DOSES D’EMPLOI',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'MODE D’EMPLOI ',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'TOXICITE',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'PPRECAUTIONS D’EMPLOI',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'IMPORTANT',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'EN CAS D\'INTOXICATION',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'EMBALLAGE',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'UNITE DE PRODUCTION',
+            'categorie_id' => $category->id
+        ]);
+
+        $category = \App\Categorie::create([
+            'name' => 'Produits Aérosols '
+        ]);
+
+        //            Add Field For this Category
+        \App\CategorieField::create([
+            'name' => 'GAMME DE PRODUIT ',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'APPELLATION COMMERCIALE',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'DESCRIPTION ',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'SUBSTANCE ACTIVE ',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'PRECAUTIONS D\'EMPLOI',
+            'categorie_id' => $category->id
+        ]);
+
+        $category = \App\Categorie::create([
+            'name' => 'Pastilles Inseticides à Usage Doméstique '
+        ]);
+
+        //            Add Field For this Category
+        \App\CategorieField::create([
+            'name' => 'GAMME DE PRODUIT ',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'APPELLATION COMMERCIALE',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'DESCRIPTION ',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'SUBSTANCE ACTIVE ',
+            'categorie_id' => $category->id
+        ]);
+
+        \App\CategorieField::create([
+            'name' => 'PRECAUTIONS D\'EMPLOI',
+            'categorie_id' => $category->id
         ]);
 
     }

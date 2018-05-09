@@ -28,8 +28,8 @@
                     <!-- eof main nav -->
                     <!-- header toggler -->
                     <span class="toggle_menu">
-									<span></span>
-								</span>
+                        <span></span>
+                    </span>
                 </div>
             </div>
 
