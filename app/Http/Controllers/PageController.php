@@ -37,7 +37,7 @@ class PageController extends Controller
     {
         return view('landing.products')->with([
             'active' => 'products-button',
-            'products' => Categorie::all(),
+            'categories' => Categorie::all(),
         ]);
     }
 

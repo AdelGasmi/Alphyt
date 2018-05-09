@@ -12,4 +12,8 @@ class Categorie extends Model
     {
         return $this->hasMany('App\CategorieField');
     }
+    public function products()
+    {
+        return $this->hasMany('App\Product');
+    }
 }

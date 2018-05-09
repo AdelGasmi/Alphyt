@@ -40,7 +40,7 @@
 
             <div class="modal fade" id="addCategorie" tabindex="-1" role="dialog"
                  aria-labelledby="exampleModalLabel1">
-                <div class="modal-dialog" role="document">
+                <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal"
@@ -73,7 +73,7 @@
                                 </label>
                                 <div class="col-md-12">
                                     <textarea required="true" name="content"
-                                              class="form-control contentTextarea"
+                                              class="contentTextarea"
                                               placeholder=""></textarea>
                                 </div>
                             </div>
@@ -109,21 +109,21 @@
                 <tbody>
                 @foreach($pages as $page)
                     <tr>
-                        <td class="text-center">{{$$page->name}}</td>
+                        <td class="text-center">{{$page->title}}</td>
                         <td class="text-center">
                             <button type="button"
                                     class="fcbtn btn btn-outline btn-info btn-1fbtn-info btn-rounded "
                                     data-toggle="modal"
-                                    data-target="#edit{{$$page->id}}">
+                                    data-target="#edit{{$page->id}}">
                                      <span class="btn-label">
                                         <i class="fa fa-edit"></i>
                                      </span>
                                 Modifier
                             </button>
 
-                            <div class="modal fade" id="edit{{$$page->id}}" tabindex="-1" role="dialog"
+                            <div class="modal fade bs-example-modal-lg" id="edit{{$page->id}}" tabindex="-1" role="dialog"
                                  aria-labelledby="exampleModalLabel1">
-                                <div class="modal-dialog" role="document">
+                                <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal"
@@ -155,8 +155,8 @@
                                                        for="example-text">Contentu
                                                 </label>
                                                 <div class="col-md-12">
-                                                    <textarea required="true" name="content"
-                                                              class="form-control contentTextarea"
+                                                    <textarea  name="content"
+                                                              class="contentTextarea"
                                                               placeholder="">{{$page->content}}</textarea>
                                                 </div>
                                             </div>
@@ -164,7 +164,7 @@
 
                                             <div class="col-md-12 text-center">
                                                 <br>
-                                                <button class="btn btn-info"> Sauvgarde</button>
+                                                <button type="submit" class="btn btn-info"> Sauvgarde</button>
                                                 {!! Form::close() !!}
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">
                                                     Annuler
@@ -187,7 +187,7 @@
                                      </span>
                                 Supprimer
                             </button>
-                            <div class="modal fade" id="delete{{$page->id}}" tabindex="-1" role="dialog"
+                            <div class="modal fade " id="delete{{$page->id}}" tabindex="-1" role="dialog"
                                  aria-labelledby="exampleModalLabel1">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
@@ -252,11 +252,9 @@
     <script src="{{asset('dashboard/plugins/bower_components/tinymce/tinymce.min.js')}}"></script>
     <script>
         $(document).ready(function () {
-
-
             if ($(".contentTextarea").length > 0) {
                 tinymce.init({
-                    selector: "textarea#articleTextarea",
+                    selector: "textarea.contentTextarea",
                     theme: "modern",
                     height: 300,
                     plugins: [

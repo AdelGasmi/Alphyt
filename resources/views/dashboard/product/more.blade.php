@@ -38,18 +38,16 @@
                                for="example-text">{{$field->name}}
                         </label>
                         <div class="col-md-12">
-                            <input required="true" name="{{$field->id}}" type="text"
+                            <textarea required="true" name="{{$field->id}}"
                                    {{$value=\App\ValueField::where([
                                        ['field_id','=',$field->id],
                                        ['product_id','=',$product->id]
                                    ])->first()}}
-                                   @if($value)
-                                   value="{{$value->value}}"
-                                   @else
-                                   value=""
-                                   @endif
-                                   class="form-control"
-                                   placeholder="">
+                                   class="form-control" placeholder="">
+                                @if($value)
+                                   {{$value->value}}
+                                @endif
+                            </textarea>
                         </div>
                     </div>
                 @endforeach
