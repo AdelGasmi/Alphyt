@@ -46,6 +46,15 @@ class DatabaseSeeder extends Seeder
         Permission::create([
             'name' => 'modify user permissions'
         ]);
+        Permission::create([
+            'name' => 'manage categories'
+        ]);
+        Permission::create([
+            'name' => 'manage products'
+        ]);
+        Permission::create([
+            'name' => 'manage pages'
+        ]);
 
         $admin = \App\User::create([
             'name' => 'admin',

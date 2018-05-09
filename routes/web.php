@@ -42,17 +42,18 @@ Route::group(['middleware' => ['permission:add user']], function () {
 Route::post('/editUser/{id}', 'UserController@update');
 
 // routes of ProductController
-
-Route::resource('product', 'ProductController');
-Route::get('product/more/{product_id}', 'ProductController@more');
-Route::patch('product/fields/{product_id}', 'ProductController@updateFields');
+Route::group(['middleware' => ['permission:manage products']], function () {
+    Route::resource('product', 'ProductController');
+    Route::get('product/more/{product_id}', 'ProductController@more');
+    Route::patch('product/fields/{product_id}', 'ProductController@updateFields');
+});
 
 // routes of CategorieController
-
-Route::resource('categorie', 'CategorieController');
-Route::resource('categorie/field', 'FieldController');
-Route::get('categorie/more/{categorie_id}', 'CategorieController@more');
-
+Route::group(['middleware' => ['permission:manage categories']], function () {
+    Route::resource('categorie', 'CategorieController');
+    Route::resource('categorie/field', 'FieldController');
+    Route::get('categorie/more/{categorie_id}', 'CategorieController@more');
+});
 
 // routes of RoleController
 
@@ -66,11 +67,11 @@ Route::get('/products/', 'PageController@getProducts');
 
 
 // routes of PermissionController
-Route::get('permissions/', 'PermissionController@index');
-Route::get('permissionsOf/{role}', 'PermissionController@permissionsOf');
-Route::post('updatePermissionsOf/{role}', 'PermissionController@updatePermissionsOf');
-
-
+Route::group(['middleware' => ['permission:modify user permissions']], function () {
+    Route::get('permissions/', 'PermissionController@index');
+    Route::get('permissionsOf/{role}', 'PermissionController@permissionsOf');
+    Route::post('updatePermissionsOf/{role}', 'PermissionController@updatePermissionsOf');
+});
 
 
 Auth::routes();

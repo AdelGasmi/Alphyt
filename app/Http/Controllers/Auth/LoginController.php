@@ -39,6 +39,11 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    public function showLoginForm()
+    {
+        return view('auth.login')->with(['active'=>'Se Connecter - Alphyt']);
+    }
+
     protected function credentials(Request $request)
     {
         $credentials = $request->only($this->username(), 'password');
