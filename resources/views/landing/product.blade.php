@@ -5,10 +5,11 @@
     <section class="intro_section ds black page_mainslider">
         <div class="flexslider" data-nav="false">
             <ul class="slides">
-                <li data-thumb="{{asset('images/slide01.jpg')}}">
-                    <img src="{{asset('images/slide01.jpg')}}" style="height: 300px" alt="">
-                </li>
-
+                @foreach($product->images as $image)
+                    <li data-thumb="{{asset('img/product/'.$image->image)}}">
+                        <img src="{{asset('img/product/'.$image->image)}}" style="height: 400px" alt="">
+                    </li>
+                @endforeach
             </ul>
 
         </div>
@@ -21,7 +22,7 @@
             <div class="row display_table_md justify-content-center">
                 <div class="col-md-8 display_table_cell_md">
                     <h2 class="section_header highlight">
-                       {{$product->title}}
+                        {{$product->title}}
                     </h2>
                     <br>
 
