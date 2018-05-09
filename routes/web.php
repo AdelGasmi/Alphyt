@@ -61,6 +61,7 @@ Route::resource('role', 'RoleController');
 // routes of PageController
 Route::get('/', 'PageController@home');
 Route::resource('page', 'PageController');
+Route::get('/page/{id}/{title}', 'PageController@getPage');
 
 
 // routes of PermissionController
@@ -70,3 +71,7 @@ Route::post('updatePermissionsOf/{role}', 'PermissionController@updatePermission
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -15,22 +15,14 @@
                             <li id="home-button" class="">
                                 <a href="{{url('/')}}">Accueil</a>
                             </li>
-                            <li id="about-button" class="">
-                                <a href="{{url('about')}}">Présentation</a>
-                            </li>
                             <li id="products-button" class="">
                                 <a href="{{url('products')}}">Produits</a>
                             </li>
-                            <li id="products-button" class="">
-                                <a href="{{url('quality')}}">La Qualite</a>
-                            </li>
-                            <li id="products-button" class="">
-                                <a href="{{url('numbers')}}">Chiffres</a>
-                            </li>
-                            <li id="products-button" class="">
-                                <a href="{{url('environment')}}">Environnement</a>
-                            </li>
-
+                            @foreach(\App\Page::all() as $page)
+                                <li id="{{$page->title}}-button" class="">
+                                    <a href="{{url('page/'.$page->id.'/'.$page->title)}}">{{$page->title}}</a>
+                                </li>
+                            @endforeach
                         </ul>
                     </nav>
                     <!-- eof main nav -->

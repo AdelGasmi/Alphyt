@@ -70,13 +70,35 @@ class DatabaseSeeder extends Seeder
                 'name' => 'categorie N^' . $i
             ]);
             \App\Product::create([
-                'title' => 'product-'.$i,
+                'title' => 'product-' . $i,
                 'img' => 'green.jpg',
                 'categorie_id' => $categorie->id,
             ]);
 
             $user->assignRole('provisor');
+
+
+
         }
+        \App\Page::create([
+            'title' => 'Unités',
+            'content' => '',
+        ]);
+
+        \App\Page::create([
+            'title' => 'La Qualité',
+            'content' => '',
+        ]);
+
+        \App\Page::create([
+            'title' => 'Chiffres',
+            'content' => '',
+        ]);
+
+        \App\Page::create([
+            'title' => 'Partenaires',
+            'content' => '',
+        ]);
 
     }
 }

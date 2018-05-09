@@ -16,6 +16,14 @@ class PageController extends Controller
         ]);
     }
 
+    public function getPage($id, $title)
+    {
+        return view('landing.page')->with([
+            'active' => $title . '-button',
+            'page' => Page::find($id),
+        ]);
+    }
+
 
     public function index()
     {
@@ -24,7 +32,6 @@ class PageController extends Controller
             'title' => 'Pages'
         ]);
     }
-
 
 
     public function store(Request $request)
@@ -45,10 +52,10 @@ class PageController extends Controller
 
     public function edit($id)
     {
-        $page=Page::find($id);
+        $page = Page::find($id);
         return view('dashboard.page.edit')->with([
             'page' => $page,
-            'title' => 'Page- '.$page->title
+            'title' => 'Page- ' . $page->title
         ]);
     }
 
