@@ -45,7 +45,11 @@ Route::post('/editUser/{id}', 'UserController@update');
 Route::group(['middleware' => ['permission:manage products']], function () {
     Route::resource('product', 'ProductController');
     Route::get('product/more/{product_id}', 'ProductController@more');
+    Route::get('product/moreImages/{product_id}', 'ProductController@moreImages');
+    Route::post('product/image/{product_id}', 'ProductController@addImage');
+    Route::delete('product/image/{image_id}', 'ProductController@deleteImage');
     Route::patch('product/fields/{product_id}', 'ProductController@updateFields');
+
 });
 
 // routes of CategorieController
@@ -64,6 +68,7 @@ Route::get('/', 'PageController@home');
 Route::resource('page', 'PageController');
 Route::get('/page/{id}/{title}', 'PageController@getPage');
 Route::get('/products/', 'PageController@getProducts');
+Route::get('/products/{id}', 'PageController@showProduct');
 
 
 // routes of PermissionController

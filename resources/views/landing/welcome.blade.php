@@ -121,15 +121,19 @@
                                 <h4><a href="#">#2 Précautions générales d'emploi des pesticides</a></h4>
                                 <p class="highlight"></p>
                             </div>
-                            - Porter des vêtements de travail, masque, gants et lunettes de protection lors du traitement
+                            - Porter des vêtements de travail, masque, gants et lunettes de protection lors du
+                            traitement
                             - Travailler par temps calme et éviter les heures chaudes de la journée
                             - Ne pas manger, ne pas boire et ne pas fumer toute la durée d'exposition aux produits
                             - En cas de contact avec les yeux ou la peau se laver abondamment à l'eau
-                            - Nettoyer les vêtements de travail, se laver soigneusement les mains et le visage à l'eau et au savon après le traitement
+                            - Nettoyer les vêtements de travail, se laver soigneusement les mains et le visage à l'eau
+                            et au savon après le traitement
                             - Ne pas jeter les restes des bouillies dans les cours d'eaux
-                            - Prendre d'avantage de précautions au moment de la préparation du bouillie et lorsque vous utilisez les produits concentrés ou il est mentionné "Toxique"
+                            - Prendre d'avantage de précautions au moment de la préparation du bouillie et lorsque vous
+                            utilisez les produits concentrés ou il est mentionné "Toxique"
                             - Eviter tout contact avec la peau et les yeux
-                            - Pour protéger les abeilles, couvrir les rushes avant le traitement et maintenir couvertes pendant 1 à 2 heures après
+                            - Pour protéger les abeilles, couvrir les rushes avant le traitement et maintenir couvertes
+                            pendant 1 à 2 heures après
                         </blockquote>
 
 
@@ -139,9 +143,11 @@
                                 <p class="highlight"></p>
                             </div>
 
-                            - Conserver les produits dans leur emballage d'origine, bien fermé et muni de leurs étiquettes
+                            - Conserver les produits dans leur emballage d'origine, bien fermé et muni de leurs
+                            étiquettes
                             - Conserver les produits sous clé et hors de portée des enfants
-                            - Entreposer les produits dans un local frais, ventilé, fermé à clé, à l'écart des denrées alimentaires, des animaux domestiques
+                            - Entreposer les produits dans un local frais, ventilé, fermé à clé, à l'écart des denrées
+                            alimentaires, des animaux domestiques
                         </blockquote>
 
                         <blockquote class="with_quotes topmargin_0 bottommargin_0">
@@ -150,8 +156,10 @@
                                 <p class="highlight"></p>
                             </div>
                             - Il ne faut jamais laisser le patient seul
-                            - En cas de contact du produit avec la peau ou les yeux, se laver immédiatement et abondamment avec de l'eau
-                            - En cas de malaise, consulter immédiatement un médecin et lui montrer l'étiquette du produit
+                            - En cas de contact du produit avec la peau ou les yeux, se laver immédiatement et
+                            abondamment avec de l'eau
+                            - En cas de malaise, consulter immédiatement un médecin et lui montrer l'étiquette du
+                            produit
                             - En cas d'ingestion du produit, alerter les secours d'urgences
                         </blockquote>
 

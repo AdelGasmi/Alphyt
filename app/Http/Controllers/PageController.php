@@ -41,6 +41,14 @@ class PageController extends Controller
         ]);
     }
 
+    public function showProduct($id)
+    {
+        return view('landing.product')->with([
+            'active' => 'products-button',
+            'product' => Product::find($id),
+        ]);
+    }
+
 
     public function store(Request $request)
     {

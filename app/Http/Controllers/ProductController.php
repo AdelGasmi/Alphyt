@@ -6,7 +6,9 @@ use App\Categorie;
 use App\Product;
 use App\ValueField;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
 class ProductController extends Controller
@@ -127,6 +129,38 @@ class ProductController extends Controller
             'product' => $product,
             'title' => $product->name . '- Details'
         ]);
+    }
+
+    public function moreImages(Request $request, $product_id)
+    {
+        $product = Product::find($product_id);
+        return view('dashboard.product.moreImages')->with([
+            'product' => $product,
+            'title' => $product->name . '- Details'
+        ]);
+    }
+
+
+    public function addImage(Request $request,$product_id)
+    {
+        $img = time() . '.' . $request->file('img')->getClientOriginalExtension();
+        Image::make($request->file('img'))->save(public_path('img/product/' . $img));
+        \App\Image::create([
+            'image' => $img,
+            'product_id'=>$product_id
+        ]);
+        Session::Flash('success', 'Le processus a été avec succès');
+        return redirect()->back();
+
+    }
+
+    public function deleteImage($image_id)
+    {
+        $image = \App\Image::find($image_id);
+        File::delete(public_path('img/product/' . $image->image));
+        $image->delete();
+        Session::Flash('success', 'Le processus a été avec succès');
+        return redirect()->back();
     }
 
 

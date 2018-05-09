@@ -113,8 +113,9 @@
                     <th class="text-center">Image</th>
                     <th class="text-center">Categorie</th>
                     <th class="text-center">Details</th>
+                    <th class="text-center">Ajouter Image</th>
                     <th class="text-center">Modifier</th>
-                    <th class="text-center">Active/Desactive</th>
+                    <th class="text-center">Supprimier</th>
 
                 </tr>
                 </thead>
@@ -135,6 +136,11 @@
                         <td class="text-center">
                             <a href="{{url('product/more/'.$product->id)}}" class="btn btn-success btn-rounded btn-outline">
                                 <span class="fa fa-plus"></span> Details
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <a href="{{url('product/moreImages/'.$product->id)}}" class="btn btn-success btn-rounded btn-outline">
+                                <span class="fa fa-picture"></span> Ajouter Image
                             </a>
                         </td>
                         <td class="text-center">

@@ -25,7 +25,7 @@
                         <ul>
                             @foreach($category->products as $product)
                                 <li>
-                                    <a href="#">{{$product->title}}</a>
+                                    <a href="{{url('products/'.$product->id)}}">{{$product->title}}</a>
                                 </li>
                             @endforeach
                         </ul>

@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-sm-12 display_table">
                 <div class="header_left_logo display_table_cell">
-                    <a href="index.html" class="logo top_logo">
+                    <a href="{{url('/')}}" class="logo top_logo">
                         <img src="images/logo.png" alt="">
                     </a>
                 </div>

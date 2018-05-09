@@ -32,7 +32,7 @@
     <script src="{{asset('s/vendor/respondj.min.js')}}"></script>
     <script src="{{asset('js/vendor/jquery-1.12.4.min.js')}}"></script>
     <![endif]-->
-
+@yield('css')
 </head>
 
 <body>
@@ -66,6 +66,7 @@
 <script>
     $('#{{$active}}').addClass('active');
 </script>
+@yield('js')
 </body>
 
 
